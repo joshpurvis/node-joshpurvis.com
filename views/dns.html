@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>joshpurvis.com - DNS visualization tool</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/green-theme.css" />
+</head>
+<body>
+
+<div class="well" id="searchBox">
+    <form class="form-horizontal">
+
+        <h3>DNS Visualization</h3>
+
+        <input type="text" name="query" id="query" class="input-medium" placeholder="Enter Domain Name" />
+        <button name="search" class="btn btn-medium" id="btnSearch">Look Up</button>
+        <label for="enable_mx" class="checkbox" id="enable_mx_label">
+            <input type="checkbox" id="enable_mx" name="enable_mx" checked="checked" /> Show MX Records
+        </label>
+
+    </form>
+    <div class="well-small alert-error hide" id="searchError">
+        Failed to find a domain matching given query.
+    </div>
+    <div class="instruction">
+        Drag and drop nodes to make sticky. <br/>
+        Click on nodes to release.<br/>
+    </div>
+</div>
+
+
+<script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/js/bootstrap.buttons.min.js"></script>
+<script src="/js/d3.v3.min.js"></script>
+<script src="/js/app.js"></script>
+<script type="text/javascript">
+    dns.init();
+</script>
+</body>
+</html>

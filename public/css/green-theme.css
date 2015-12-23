@@ -1,0 +1,54 @@
+body {
+    background-color: #F2F0DF;
+}
+
+.well {
+    background-color: #F3F0EB;
+}
+
+path.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+marker#a {
+  fill: #8E9E82;
+}
+
+path.link.a {
+  stroke: #8E9E82;
+}
+
+marker#mx {
+  fill: #607890;
+}
+
+path.link.mx {
+  stroke: #607890;
+}
+
+path.link.ns {
+  stroke-dasharray: 0,2 1;
+}
+
+circle {
+  fill: #eee;
+  stroke: #9A8679;
+  stroke-width: 1.5px;
+}
+
+circle.sticky {
+    fill: #433836;
+}
+
+text {
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+text.shadow {
+  stroke: #F2F0DF;
+  stroke-width: 3px;
+  stroke-opacity: .8;
+}

@@ -1,0 +1,82 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 10px sans-serif;
+}
+
+#searchBox {
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+}
+
+.instruction {
+    font-size: 12px;
+}
+
+
+path.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+marker#a {
+  fill: green;
+}
+
+path.link.a {
+  stroke: green;
+}
+
+marker#mx {
+  fill: #0000CC;
+}
+
+path.link.mx {
+  stroke: #0000CC;
+}
+
+path.link.ns {
+  stroke-dasharray: 0,2 1;
+}
+
+circle {
+  fill: #eee;
+  stroke: #333;
+  stroke-width: 1.5px;
+}
+
+circle.sticky {
+    fill: #CCC;
+}
+
+text {
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+text.shadow {
+  stroke: #fff;
+  stroke-width: 3px;
+  stroke-opacity: .8;
+}
+
+#enable_mx_label {
+    margin-top: 10px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+#body {
+    font-size: 14px;
+    font-family: Georgia, Serif, San-sarif, Arial, sans-serif;
+    text-align: center;
+}
