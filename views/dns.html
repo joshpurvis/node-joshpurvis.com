@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>joshpurvis.com - DNS visualization tool</title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="/css/green-theme.css" />
-</head>
-<body>
+{% extends 'base.html' %}
 
+{% block body %}
 <div class="well" id="searchBox">
     <form class="form-horizontal">
 
@@ -38,5 +30,5 @@
 <script type="text/javascript">
     dns.init();
 </script>
-</body>
-</html>
+
+{% endblock %}
