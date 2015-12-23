@@ -27,14 +27,14 @@ router.get('/:domain?', function(req, res, next) {
     /* Adds a link in the graph */
     links.push({
       'source': source,
-      'target': target,
+      'target': rrtype + ': ' + target,
       'type': rrtype.toLowerCase(),
       'weight': weight
     });
   };
 
   var findRecords = function(parent, rrTypes, callback) {
-    /* For each rrType, link the resolved records of that rrType and link to the parent node */
+    /* For each rrType, link the resolved records of that rrType to the parent node */
     async.forEachOf(rrTypes, function(rrType, key, eachCallback) {
       dns.resolve(parent, rrType.name, function(err, records) {
         _.each(records, function(record) {
@@ -43,7 +43,7 @@ router.get('/:domain?', function(req, res, next) {
                             ? record.exchange /* mx records return objects */
                             : record;
 
-          addLink(parent, rrType.name + ': ' + recordName, rrType.name, record.weight);
+          addLink(parent, recordName, rrType.name, rrType.weight);
         });
         eachCallback(null);
       });
