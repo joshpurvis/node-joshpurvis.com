@@ -23,12 +23,12 @@ router.get('/:domain?', function(req, res, next) {
     rrTypes['MX'] = {'name': 'MX', weight: 100};
   }
 
-  var addLink = function(source, target, rrtype, weight) {
+  var addLink = function(source, target, rrType, weight) {
     /* Adds a link in the graph */
     links.push({
       'source': source,
-      'target': rrtype + ': ' + target,
-      'type': rrtype.toLowerCase(),
+      'target': rrType + ': ' + target,
+      'type': rrType.toLowerCase(),
       'weight': weight
     });
   };
@@ -40,8 +40,8 @@ router.get('/:domain?', function(req, res, next) {
         _.each(records, function(record) {
 
           var recordName = rrType.name == 'MX'
-                            ? record.exchange /* mx records return objects */
-                            : record;
+            ? record.exchange /* mx records return objects */
+            : record;
 
           addLink(parent, recordName, rrType.name, rrType.weight);
         });
@@ -54,7 +54,7 @@ router.get('/:domain?', function(req, res, next) {
 
   async.waterfall([
 
-    function (callback) {
+    function(callback) {
       findRecords(domain, rrTypes, function(err) {
         callback(err);
       });
@@ -62,7 +62,7 @@ router.get('/:domain?', function(req, res, next) {
 
   ], function(err) {
     if (err) {
-      res.send({domain: domain, links: [], error: true})
+      res.send({domain: domain, links: [], error: true});
     } else {
       res.send({domain: domain, links: links});
     }
